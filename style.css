@@ -1,23 +1,408 @@
-*::before,*::after{
-    box-sizing:  border-box;
-} 
-
-body, h1,h2,h3,h4,p,ul,li{
+/* ==========================================================================
+   1. ESTILOS DE BASE E GLOBAIS
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
-    line-height: 1.5;
-    background: linear-gradient(45deg, #fbc2eb, #a6c1ee, #f6d365, #fda085);
-    background-size: 400% 40%;
-    animation: gradient-move 15s ease infinite;
-
-    
+html {
+    scroll-behavior: smooth;
 }
-@keyframes gradient-move {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+
+body {
+    background-color: #002147;
+    color: #F0F8FF;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    color: #FBEC5D;
+    border-bottom: 2px solid #FBEC5D;
+    padding-bottom: 8px;
+    display: inline-block;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.botao-principal {
+    background-color: #FBEC5D;
+    color: #002147;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.botao-principal:hover {
+    transform: scale(1.05);
+}
+
+.botao-secundario {
+    background-color: transparent;
+    color: #FBEC5D;
+    padding: 12px 24px;
+    border: 2px solid #FBEC5D;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.botao-secundario:hover {
+    background-color: #FBEC5D;
+    color: #002147;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ==========================================================================
+   2. HEADER E NAVEGAÇÃO
+   ========================================================================== */
+.site-header {
+    padding: 1rem;
+    border-bottom: 2px solid #FBEC5D;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FBEC5D;
+}
+
+.menu-toggle {
+    background: transparent;
+    border: none;
+    color: #F0F8FF;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background-color: #002147;
+    padding: 1rem;
+    z-index: 5;
+}
+
+.nav-list.is-active {
+    display: block;
+}
+
+.nav-list li {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.nav-list a {
+    font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+    .nav-list {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+        gap: 1.5rem;
+        z-index: auto;
+    }
+    .nav-list li {
+        margin-bottom: 0;
+    }
+    .nav-list a:hover {
+        color: #FBEC5D;
+    }
+}
+
+/* ==========================================================================
+   3. SEÇÕES DO CONTEÚDO PRINCIPAL
+   ========================================================================== */
+
+/* --- SEÇÃO SOBRE --- */
+.sobre {
+    padding: 4rem 1rem;
+}
+.sobre-conteudo {
+    text-align: center;
+}
+.sobre-conteudo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #FBEC5D;
+    margin: 0 auto 1.5rem auto;
+}
+.sobre-texto h3 {
+    color: #FBEC5D;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.sobre-texto p {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+@media (min-width: 768px) {
+    .sobre-conteudo {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        text-align: left;
+    }
+    .sobre-conteudo img {
+        margin-bottom: 0;
+    }
+    .sobre-texto p {
+        margin: 0;
+    }
+}
+
+/* --- SEÇÃO PROJETOS --- */
+.projetos {
+    padding: 4rem 1rem;
+    background-color: #0A2B52;
+    text-align: center;
+}
+
+.projeto-card {
+    background-color: #002147;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.projeto-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    border-color: #FBEC5D;
+}
+
+.projeto-card img {
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.projeto-card h3 {
+    color: #FBEC5D;
+    margin-bottom: 0.5rem;
+}
+.projeto-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0;
+}
+.projeto-tags li {
+    background-color: rgba(251, 236, 93, 0.1);
+    color: #FBEC5D;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+.projeto-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+@media (min-width: 768px) {
+    .projetos-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        text-align: left;
+    }
+    .projeto-card {
+        margin-bottom: 0;
+    }
+}
+@media (min-width: 1200px) {
+    .projetos-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* --- SEÇÃO CONTATO --- */
+.contato {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+.contato p {
+    max-width: 550px;
+    margin: 0 auto 1.5rem auto;
+}
+.contato-email {
+    display: inline-block;
+    background-color: #FBEC5D;
+    color: #002147;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease;
+}
+.contato-email:hover {
+    transform: scale(1.05);
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.social-links a:hover {
+    color: #FBEC5D;
+}
+
+
+/* ==========================================================================
+   4. ESTILOS DA EXPANSÃO DO PROJETO (VERSÃO TELA CHEIA)
+   ========================================================================== */
+
+/* Fundo escurecido que aparecerá com a expansão */
+.page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 33, 71, 0.85);
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.page-overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* O card quando está expandido */
+.projeto-card.is-expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    overflow-y: auto;
+    z-index: 51;
     
+    /* Previne que o grid pai interfira */
+    grid-column: auto;
+    margin-bottom: 2rem; /* Restaura a margem original */
+}
+
+/* A área de detalhes dentro do card expandido */
+.projeto-detalhes {
+    /* Mostra imediatamente quando o card é expandido */
+    max-height: 100%; 
+    display: grid;
+    grid-template-columns: 1fr; /* Coluna única no mobile */
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(251, 236, 93, 0.2);
+    margin-top: 1.5rem;
+}
+
+.projeto-card.is-expanded .projeto-detalhes {
+    /* Força o conteúdo a preencher o espaço vertical */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Esconde o conteúdo resumido quando o card está expandido */
+.projeto-card.is-expanded > h3,
+.projeto-card.is-expanded > img,
+.projeto-card.is-expanded > p,
+.projeto-card.is-expanded > .projeto-tags {
+    display: none;
+}
+
+/* Ajusta os botões para ficarem visíveis e no topo */
+.projeto-card.is-expanded .projeto-links {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(251, 236, 93, 0.2);
+}
+
+.detalhes-texto h4 {
+    color: #FBEC5D;
+    margin-bottom: 0.5rem;
+    border-bottom: none;
+    display: block;
+}
+
+.detalhes-relatorio {
+    flex-grow: 1; /* Faz o relatório ocupar o espaço restante */
+    display: flex;
+}
+
+.detalhes-relatorio iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Layout de 2 colunas para o conteúdo expandido em ecrãs maiores */
+@media (min-width: 900px) {
+    .projeto-card.is-expanded .projeto-detalhes {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .detalhes-texto {
+        flex-basis: 35%; /* O texto ocupa 35% da largura */
+        overflow-y: auto;
+    }
+    .detalhes-relatorio {
+        flex-basis: 65%; /* O relatório ocupa 65% */
+    }
 }

@@ -1,22 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolas Desenvolvedor</title>
-    <link rel = "stylesheet" type = "text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-    <header>
-        <h1>Nicolas</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre"data-slide = "0"></a>Home</li>
-                <li><a href="#Portifolio"></a>Portifolio</li>
-                <li><a href="#Certificações"></a>Certificações</li>
-                <li><a href="#Contact"></a>Contate me</li>
-            </ul>
-        </nav>
+
+    <header class="site-header">
+        <div class="container">
+            <p class="logo">Nicolas</p>
+
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                    <span class="sr-only">Menu</span>
+                    ☰
+                </button>
+
+                <ul id="primary-navigation" class="nav-list">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
+    <main>
+        <section id="sobre" class="sobre">
+            <div class="container">
+                <h2>Sobre Mim</h2>
+                <div class="sobre-conteudo">
+                    <img src="templates/images/foto_nova.jpg" alt="Foto de Nicolas">
+                    <div class="sobre-texto">
+                        <h3>Olá! Eu sou o Nicolas.</h3>
+                        <p>
+                            Sou um desenvolvedor apaixonado por transformar ideias em realidade através do código. Com
+                            um forte foco em desenvolvimento web, estou sempre buscando aprender novas tecnologias e
+                            aprimorar minhas habilidades para criar soluções eficientes e com ótimas experiências para o
+                            usuário.
+                        </p>
+                        <p>
+                            Atualmente, estou buscando minha primeira oportunidade para colaborar em projetos
+                            desafiadores e crescer profissionalmente em uma equipe dinâmica.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="projetos">
+            <div class="container">
+                <h2>Meus Projetos</h2>
+
+                <div class="projetos-grid">
+                    <article class="projeto-card">
+                        <img src="templates/images/relatorio_prefeitura.png" alt="Screenshot do Projeto 1">
+                        <h3>Analise prefeitura são gonçalo</h3>
+                        <p>analise de servidores ativos na prefeitura de São gonçalo do para com foco na busca de
+                            pessoas na instituiçao</p>
+                        <ul class="projeto-tags">
+                            <li>Power Bi</li>
+                            <li>Excel</li>
+                            <li>Dax</li>
+                        </ul>
+                        <div class="projeto-links">
+                            <a href="#" class="botao-principal" data-expand-trigger="powerbi">Ver ao Vivo</a>
+                                Vivo</a>
+                            <a href="https://github.com/seu-usuario/nome-do-repositorio" class="botao-secundario"
+                                target="_blank">Ver Código</a>
+                        </div>
+                        <div class="projeto-detalhes">
+                            <div class="detalhes-texto">
+                                <h4>Sobre o Relatório</h4>
+                                <p>
+                                    Este relatório interativo foi desenvolvido para analisar o quadro de servidores
+                                    ativos da Prefeitura de São Gonçalo do Pará. Os dados podem ser filtrados por
+                                    secretaria, cargo e data de admissão para fornecer insights sobre a estrutura da
+                                    instituição.
+                                </p>
+                                <h4>Desafios e Aprendizados</h4>
+                                <p>
+                                    O principal desafio foi a limpeza e tratamento dos dados extraídos de múltiplas
+                                    fontes. Durante o processo, aprimorei minhas habilidades em DAX para criar métricas
+                                    complexas e em design de dashboards para garantir uma visualização clara e objetiva.
+                                </p>
+                            </div>
+                            <div class="detalhes-relatorio">
+                                <iframe title="Analise prefeitura são gonçalo"
+                                    src="https://app.powerbi.com/view?r=COLE_SEU_CODIGO_REAL_AQUI" frameborder="0"
+                                    allowFullScreen="true">
+                                </iframe>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="projeto-card">
+                        <img src="caminho/para/imagem-projeto2.jpg" alt="Screenshot do Projeto 2">
+                        <h3>Título do Projeto 2</h3>
+                        <p>Uma descrição curta e impactante do seu projeto, explicando o que ele faz e seu objetivo
+                            principal.</p>
+                        <ul class="projeto-tags">
+                            <li>Python</li>
+                            <li>Flask</li>
+                            <li>HTML</li>
+                        </ul>
+                        <div class="projeto-links">
+                            <a href="#" class="botao-principal">Ver ao Vivo</a>
+                            <a href="#" class="botao-secundario">Ver Código</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <div class="container">
+                <h2>Vamos Conversar?</h2>
+                <p>Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato
+                    através do meu email ou me encontrar nas redes sociais.</p>
+                <a href="mailto:gabrielnicolas612@gmail.com" class="contato-email">gabrielnicolas612@gmail.com</a>
+
+                <div class="social-links">
+                    <a href="https://github.com/siriusbrack2212" target="_blank" aria-label="GitHub">GitHub</a>
+                    <a href="https://www.linkedin.com/in/nicolas-gabriel-3b8051366?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
